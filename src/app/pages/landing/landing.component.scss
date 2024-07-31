@@ -1,0 +1,119 @@
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text color */
+}
+
+/* Container for positioning logos */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 10; /* Ensure logos are above other content */
+}
+
+/* Logo styling */
+.logo {
+  width: 50px; /* Adjust size for a more compact look */
+  height: auto;
+}
+
+.logo2 {
+  width: 50px; /* Adjust size for consistency */
+  height: auto;
+}
+
+.logo3 {
+  width: 250px;
+  height: auto;
+}
+
+/* Welcome box styling */
+.welcome-box {
+  text-align: center;
+  padding: 30px; /* Adjusted padding */
+  background-color: rgba(0, 0, 0, 0.9); /* Slightly opaque dark background */
+  border-radius: 48px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow for modern look */
+  max-width: 450px; /* Ensure a sleek width */
+  margin: 20px; /* Margin for spacing */
+  position: relative;
+  z-index: 5; /* Ensure it’s above other content */
+}
+
+/* Login form styling */
+.login-form {
+  text-align: center;
+  padding: 30px; /* Consistent padding with welcome box */
+  background-color: rgba(33, 33, 33, 0.9); /* Dark background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Consistent shadow */
+  max-width: 450px; /* Ensure consistent width */
+  margin: 20px; /* Margin for spacing */
+  position: relative;
+  z-index: 5; /* Ensure it’s above other content */
+}
+
+/* Input field styling */
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0; /* Margin to separate input fields */
+  border: 1px solid #333; /* Dark border for visibility */
+  border-radius: 8px; /* Consistent border radius */
+  background-color: #1e1e1e; /* Dark background for inputs */
+  color: #ffffff; /* White text color */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); /* Light inner shadow for depth */
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px; /* Increased padding for button */
+  background-color: #5af63b; /* Primary teal color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Margin to separate from input fields */
+}
+
+button:hover {
+  background-color: #1eaf2c; /* Darker teal on hover */
+}
+
+
+
+/* Animation and transition */
+.animate__animated {
+  animation-duration: 2.2s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

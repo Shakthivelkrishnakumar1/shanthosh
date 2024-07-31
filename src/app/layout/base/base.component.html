@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="base-content">
+  <app-sidebar (toggle)="onSidebarToggle($event)" [class.sidebar-open]="sidebarOpen"></app-sidebar>
+  <div class="main-content" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #121212; /* Match the landing and login page styles */
+  color: #ffffff;
+
+  .logo {
+    padding: 0%;
+  }
+}

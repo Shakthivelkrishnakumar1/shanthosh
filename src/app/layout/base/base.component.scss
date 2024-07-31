@@ -1,0 +1,30 @@
+.base-content {
+  display: flex;
+  min-height: calc(100vh - 50px); /* Adjust to account for header/footer height */
+  position: relative;
+
+  app-sidebar {
+    width: relative; /* Adjust sidebar width */
+    background-color: #1e1e1e; /* Match the style of other components */
+  }
+
+  app-main {
+    flex: 1;
+    padding: 20px;
+    background-color: #121212; /* Match the style of other components */
+    color: #ffffff;
+    // margin-left: 250px; /* Offset for sidebar */
+    
+
+    &.sidebar-open {
+      margin-left: 250px;
+    }
+  }
+}
+
+app-footer {
+  background-color: #121212; /* Match the style of other components */
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+}

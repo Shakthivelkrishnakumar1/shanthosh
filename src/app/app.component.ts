@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { MainComponent } from "./components/main/main.component";
+import { FooterComponent } from "./components/footer/footer.component";
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [SidebarComponent, HeaderComponent, MainComponent, FooterComponent, RouterOutlet]
 })
 export class AppComponent {
-  title = 'frontend';
+  isSidebarOpen = false;
+
+  toggleSidebar(isOpen: boolean) {
+    this.isSidebarOpen = isOpen;
+  }
 }

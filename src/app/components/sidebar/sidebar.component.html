@@ -1,0 +1,16 @@
+<div class="sidebar-toggle" (click)="toggleSidebar()">
+  <fa-icon [icon]="faBars" *ngIf="!isOpen" class="toggle-icon"></fa-icon>
+  <!-- <fa-icon [icon]="faTimes" *ngIf="isOpen" class="toggle-icon"></fa-icon> -->
+</div>
+
+<div class="sidebar" [ngClass]="{ 'sidebar-open': isOpen }">
+  <div class="sidebar-header">
+    <h2>Sidebar</h2>
+    <fa-icon [icon]="faTimes" class="close-icon" (click)="toggleSidebar()"></fa-icon>
+  </div>
+  <ul class="sidebar-menu">
+    <li><a href="#">Chat 1</a></li>
+    <li><a href="#">Chat 2</a></li>
+    <li><a href="#">Chat 3</a></li>
+  </ul>
+</div>
