@@ -1,12 +1,5 @@
-Landing - Login 
+-> Logout completion
+-> Cache
+-> Route guards
 
-*Authentication for Login - redesign
-
-*Signup - Forgotten credential
-Base page redesign:
-->Sidenav display toggle,
-->Footer align
-->Profile section icon component.
-
-
-
+-> Filepath error

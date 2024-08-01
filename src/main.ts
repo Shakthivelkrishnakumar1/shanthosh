@@ -1,4 +1,3 @@
-// main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
@@ -11,7 +10,7 @@ import { MsalInterceptor } from '@azure/msal-angular';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
-    auth: {
+    auth: { 
       clientId: '8ffa51ed-7c44-4aec-99b9-767009a2565a',
       authority: 'https://login.microsoftonline.com/6ebbe8c1-b195-4a1b-a6e6-7797203a8aa1',
       redirectUri: 'http://localhost:4200',
@@ -23,7 +22,6 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     }
   });
 }
-
 
 export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   return {
@@ -45,7 +43,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
 
 async function initializeMsalInstance() {
   const msalInstance = MSALInstanceFactory();
-  await msalInstance.initialize(); // Ensure initialization is awaited
+  await msalInstance.initialize(); 
   return msalInstance;
 }
 
