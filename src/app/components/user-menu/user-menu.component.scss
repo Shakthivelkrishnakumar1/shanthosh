@@ -26,13 +26,14 @@
       padding: 10px;
       text-align: left;
 
-      a {
+      a, button {
         color: #ffffff;
         text-decoration: none;
         display: block;
+        cursor: pointer;
       }
 
-      a:hover {
+      a:hover, button:hover {
         background-color: #333;
       }
     }

@@ -19,7 +19,9 @@
     </div>
 
     <div *ngIf="showLogin" class="login-form">
-      <app-login (onLoginSuccess)="onLoginSuccess()"></app-login>
+      <app-login (loginPopupOpened)="onLoginPopupOpened()" (onLoginSuccess)="onLoginSuccess()"></app-login>
     </div>
   </div>
+
+  <div *ngIf="popupOpen" class="overlay"></div>
 </div>

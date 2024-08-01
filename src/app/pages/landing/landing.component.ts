@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class LandingComponent {
   showWelcome: boolean = true;
   showLogin: boolean = false;
+  popupOpen: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -22,7 +23,7 @@ export class LandingComponent {
   }
 
   backgroundClick(event: MouseEvent) {
-    if (this.showLogin) {
+    if (this.showLogin && !this.popupOpen) {
       this.toggleLogin(false);
     }
   }
@@ -31,9 +32,12 @@ export class LandingComponent {
     event.stopPropagation();
   }
 
+  onLoginPopupOpened() {
+    this.popupOpen = true;
+  }
+
   onLoginSuccess() {
     console.log('Login successful, navigating to /home');
     this.router.navigate(['/home']);
   }
-  
 }

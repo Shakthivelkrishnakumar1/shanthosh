@@ -13,19 +13,19 @@ import { AuthenticationResult, BrowserAuthError } from '@azure/msal-browser';
 })
 export class LoginComponent {
   @Output() onLoginSuccess = new EventEmitter<void>();
+  @Output() loginPopupOpened = new EventEmitter<void>();
 
   loading: boolean = false;
   loginError: boolean = false;
 
   constructor(private msalService: MsalService) {}
 
-  async login() {
+  async signInWithMicrosoft() {
+    this.loginPopupOpened.emit();
     this.loading = true;
     try {
       console.log('Clearing cache before login...');
       this.clearCache();
-
-      
 
       if (this.isInteractionInProgress()) {
         console.log('Interaction is still in progress, retrying after delay...');
