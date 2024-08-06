@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^2.3.0",
     "@angular/animations": "^18.1.1",
     "@angular/cdk": "^18.1.1",
     "@angular/common": "^18.1.0",
@@ -30,6 +31,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "animate.css": "^4.1.1",
     "aws-amplify": "^6.4.3",
+    "google-auth-library": "^9.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

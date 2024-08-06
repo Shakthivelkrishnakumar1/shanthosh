@@ -3,6 +3,7 @@ import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from './app/app.routes';
+import { SocialAuthServiceConfig, SocialLoginModule, GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { MsalModule, MSAL_INSTANCE, MSAL_GUARD_CONFIG, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalInterceptorConfiguration } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication, InteractionType } from '@azure/msal-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -10,7 +11,7 @@ import { MsalInterceptor } from '@azure/msal-angular';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
-    auth: { 
+    auth: {
       clientId: '8ffa51ed-7c44-4aec-99b9-767009a2565a',
       authority: 'https://login.microsoftonline.com/6ebbe8c1-b195-4a1b-a6e6-7797203a8aa1',
       redirectUri: 'http://localhost:4200',
@@ -43,7 +44,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
 
 async function initializeMsalInstance() {
   const msalInstance = MSALInstanceFactory();
-  await msalInstance.initialize(); 
+  await msalInstance.initialize();
   return msalInstance;
 }
 
@@ -52,12 +53,27 @@ initializeMsalInstance().then((msalInstance) => {
     providers: [
       importProvidersFrom(
         RouterModule.forRoot(routes),
-        MsalModule.forRoot(msalInstance, MSALGuardConfigFactory(), MSALInterceptorConfigFactory())
+        MsalModule.forRoot(msalInstance, MSALGuardConfigFactory(), MSALInterceptorConfigFactory()),
+        SocialLoginModule
       ),
       {
         provide: HTTP_INTERCEPTORS,
         useClass: MsalInterceptor,
         multi: true
+      },
+      {
+        provide: 'SocialAuthServiceConfig',
+        useValue: {
+          autoLogin: false,
+          providers: [
+            {
+              id: GoogleLoginProvider.PROVIDER_ID,
+              provider: new GoogleLoginProvider(
+                '772900034161-arv763khkvh0tgcg2ev4lk5jl897vr01.apps.googleusercontent.com'
+              )
+            }
+          ]
+        } as SocialAuthServiceConfig,
       }
     ]
   });
