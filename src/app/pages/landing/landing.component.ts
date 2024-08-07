@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+// src/app/landing/landing.component.ts
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { CommonModule } from '@angular/common';
+import { defaultLandingConfig, LandingConfig } from '../../../blueprints/landing/landing.blueprint';
 
 @Component({
   selector: 'app-landing',
@@ -10,20 +12,23 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [LoginComponent, CommonModule]
 })
-export class LandingComponent {
-  showWelcome: boolean = true;
-  showLogin: boolean = false;
+export class LandingComponent implements OnInit {
+  config: LandingConfig = defaultLandingConfig;
   popupOpen: boolean = false;
 
   constructor(private router: Router) {}
 
+  ngOnInit(): void {
+    // You can add more logic here to dynamically fetch or update the config
+  }
+
   toggleLogin(show: boolean) {
-    this.showWelcome = !show;
-    this.showLogin = show;
+    this.config.showWelcome = !show;
+    this.config.showLogin = show;
   }
 
   backgroundClick(event: MouseEvent) {
-    if (this.showLogin && !this.popupOpen) {
+    if (this.config.showLogin && !this.popupOpen) {
       this.toggleLogin(false);
     }
   }
