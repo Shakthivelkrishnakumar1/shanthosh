@@ -4,4 +4,3 @@ export enum Abbreviations {
     login = "LGN",
     baseLayout = "BL"
 }
-
