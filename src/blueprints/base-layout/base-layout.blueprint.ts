@@ -44,6 +44,9 @@ export class BaseLayoutBlueprint {
                         type: "type1",
                         textCssClass: "",
                         textContent : "",
+                        retailerLogoPath: '../../../assets/logo/logo-2.png',
+                        companyLogoPath: '../../../assets/logo/company-logo.png',
+                        productLogoPath: '../../../assets/logo/logo-2.png'
                         CompanyLogoPath: '../../../assets/logo/company-logo.png',
                         logo1: '../../../assets/logo/logo-2.png',
                         logo2: '../../../assets/logo/logo-2.png'
@@ -52,6 +55,9 @@ export class BaseLayoutBlueprint {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
+                        retailerLogoPath: '../../../assets/logo/logo-2.png',
+                        companyLogoPath: '../../../assets/logo/company-logo.png',
+                        productLogoPath: '../../../assets/logo/logo-2.png'
                         CompanyLogoPath: '../../../assets/logo/company-logo.png',
                         logo1: '../../../assets/logo/logo-2.png',
                         logo2: '../../../assets/logo/logo-2.png'
@@ -62,3 +68,4 @@ export class BaseLayoutBlueprint {
 
     }
 }
+

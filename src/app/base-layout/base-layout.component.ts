@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header.component'; 
-import { Profile } from '../profile.model';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import BaseLa
 
 @Component({
   selector: 'app-base-layout',
