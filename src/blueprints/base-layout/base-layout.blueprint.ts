@@ -46,15 +46,15 @@ export class BaseLayoutBlueprint {
                         textContent : "",
                         retailerLogoPath: '../../../assets/logo/logo-2.png',
                         companyLogoPath: '../../../assets/logo/company-logo.png',
-                        productLogoPath: '../../../assets/logo/helix.png'
+                        productLogoPath: '../../../assets/logo/logo-2.png'
                     },
                     BL: {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
-                        retailerLogoPath: '../../../assets/logo/carrefour.png',
-                        companyLogoPath: '../../../assets/logo/unilever.png',
-                        productLogoPath: '../../../assets/logo/helix.png'
+                        retailerLogoPath: '../../../assets/logo/logo-2.png',
+                        companyLogoPath: '../../../assets/logo/company-logo.png',
+                        productLogoPath: '../../../assets/logo/logo-2.png'
                     },
                 }
             }
