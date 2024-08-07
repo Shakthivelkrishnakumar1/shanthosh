@@ -41,20 +41,20 @@ export class BaseLayoutBlueprint {
             baseLayoutElements: {
                 topbarType: {
                     LGN: {
-                        type: "type2",
+                        type: "type1",
                         textCssClass: "",
                         textContent : "",
-                        retailerLogoPath: '../../../assets/logo/logo-2.png',
-                        companyLogoPath: '../../../assets/logo/company-logo.png',
-                        productLogoPath: '../../../assets/logo/helix.png'
+                        CompanyLogoPath: '../../../assets/logo/company-logo.png',
+                        logo1: '../../../assets/logo/logo-2.png',
+                        logo2: '../../../assets/logo/logo-2.png'
                     },
                     BL: {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
-                        retailerLogoPath: '../../../assets/logo/carrefour.png',
-                        companyLogoPath: '../../../assets/logo/unilever.png',
-                        productLogoPath: '../../../assets/logo/helix.png'
+                        CompanyLogoPath: '../../../assets/logo/company-logo.png',
+                        logo1: '../../../assets/logo/logo-2.png',
+                        logo2: '../../../assets/logo/logo-2.png'
                     },
                 }
             }

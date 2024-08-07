@@ -80,4 +80,6 @@ export class LoginComponent {
     const keys = [...Object.keys(localStorage), ...Object.keys(sessionStorage)];
     return keys.some(key => key.includes('interaction_status'));
   }
+
+  
 }
