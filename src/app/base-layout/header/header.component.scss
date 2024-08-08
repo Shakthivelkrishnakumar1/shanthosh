@@ -4,35 +4,31 @@
 }
 
 .header-withbg {
-    background: linear-gradient(0deg, rgba(234, 241, 253, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(0deg, rgb(199, 197, 192) 50%, rgba(255, 255, 255, 1) 100%);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: var(--helix-layout-border-style);
+    align-items:center;
+    border-bottom: var(--framework-layout-border-style);
 }
-.unilever-logo{
-    width: clamp(2.638rem,3vw,2.75rem);
+.company-logo{
+    width: clamp(5.638rem,3vw,2.75rem);
 }
 
-.carrefour-logo{
-    width: clamp(4.38rem,3vw,4.75rem);
+.client-logo{
+    width: clamp(5.638rem,3vw,2.75rem);
+    margin-left: 15px;
 }
 
 .header-text {
-    color: var(--helixDarkBlue);
+    color: var(--TopBarFrameWorkHeaderColor)
 }
 
 .right-logo {
     margin-left: auto;
 }
 
-.right-profile {
-    width: clamp(12.5rem, 10vw, 18.75rem);
-}
 
-.right-logo .helix-logo {
-    width: clamp(8rem, 5vw, 10rem);
-}
+
 
 .center-text {
     display: flex;
@@ -47,14 +43,16 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-grow: 1;
 }
-.helix-logo-stacked{
-    width: clamp(6rem,3vw,8rem);
+.client-logo-stacked{
+    width: clamp(8rem,3vw,2.6rem);
 }
 
 .collaboration-suite-text{
     font-size: clamp(1rem, 1vw, 1.25rem); 
     font-weight: 900;
+    margin-left: auto;
 }
 
 .dynamic-text{
