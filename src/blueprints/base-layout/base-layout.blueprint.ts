@@ -51,7 +51,7 @@ export class BaseLayoutBlueprint {
                         companyLogoPath: '../../../assets/logo/company.png',
                        
                         logo1: '../../../assets/logo/bsc.png',
-                        logo2: '../../../assets/logo/bsc.png'
+                        logo2: '../../../assets/logo/logo-2.png'
                     },
                     BL: {
                         type: "type2",
