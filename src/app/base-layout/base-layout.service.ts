@@ -4,9 +4,12 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class BaseLayoutService {
   private isLoaded = new BehaviorSubject<any>(false);
   public switchingProfile = new BehaviorSubject<any>(false);
@@ -28,11 +31,22 @@ export class BaseLayoutService {
   public accessStortedSideNavData: any = new BehaviorSubject<any>([]);
 
 
-  constructor(
-    private http: HttpClient,
-    private store: Store,
-    private router : Router
+  constructor( 
+    // private router : Router,
+    // private store: Store,
+    // private http: HttpClient,
+   
+    
   ) { }
-
   
+  
+  setPageLevelMetadata = (value: any) => {
+   
+console.log("hfjdh")
+    const topbarType: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "topBarType", value);
+    console.log("HII",topbarType)
+  
+   this.topbarType.next(topbarType)
+
+  }
 }

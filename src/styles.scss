@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.topbar{
+    grid-area: topbar;
+    display: var(--helix-topbar-display);
+}

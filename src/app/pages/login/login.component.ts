@@ -3,13 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MsalService } from '@azure/msal-angular';
 import { AuthenticationResult, BrowserAuthError } from '@azure/msal-browser';
-
+import { BaseLayoutService } from '../../base-layout/base-layout.service';
+import { Abbreviations } from '../../../blueprints/base-layout/base-layout.blueprint';
+import { HeaderComponent } from "../../base-layout/header/header.component";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, HeaderComponent]
 })
 export class LoginComponent {
   @Output() onLoginSuccess = new EventEmitter<void>();
@@ -17,8 +19,10 @@ export class LoginComponent {
 
   loading: boolean = false;
   loginError: boolean = false;
-
-  constructor(private msalService: MsalService) {}
+ 
+  constructor(private msalService: MsalService, private baseLayoutService: BaseLayoutService  ) {
+    
+  }
 
   async signInWithMicrosoft() {
     this.loginPopupOpened.emit();
@@ -80,6 +84,10 @@ export class LoginComponent {
     const keys = [...Object.keys(localStorage), ...Object.keys(sessionStorage)];
     return keys.some(key => key.includes('interaction_status'));
   }
-
+  ngOnInit():void{
+    console.log(Abbreviations.login)
+    this.baseLayoutService.setPageLevelMetadata(Abbreviations.login);
+  }
   
+ 
 }

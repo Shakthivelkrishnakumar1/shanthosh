@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from './app/app.routes';
 import { SocialAuthServiceConfig, SocialLoginModule, GoogleLoginProvider } from '@abacritt/angularx-social-login';
@@ -8,6 +8,9 @@ import { MsalModule, MSAL_INSTANCE, MSAL_GUARD_CONFIG, MSAL_INTERCEPTOR_CONFIG, 
 import { IPublicClientApplication, PublicClientApplication, InteractionType } from '@azure/msal-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MsalInterceptor } from '@azure/msal-angular';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({

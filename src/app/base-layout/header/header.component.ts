@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { commonBlueprint } from '../../../blueprints/common/common.blueprint';
-import { BaseLayoutService } from '../base-layout.service';
+
 import { CommonModule } from '@angular/common';
+import { BaseLayoutService } from '../base-layout.service';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,18 +13,20 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent implements OnInit {
   regionName : string = commonBlueprint.regionName; 
   helloText = commonBlueprint.helloText;
-  topbarMetadata: any = {
-    type:'type0'
-  };
+  topbarMetadata: any = {};
+
+
+ constructor(private baselayoutService: BaseLayoutService) {
+
+ }
  
 
   ngOnInit(): void {
-    // this.BaseLayoutService.topbarType.subscribe((data) => {
-    //   this.topbarMetadata = data;
-    //   // this.getProfile();
-    //   // this.getProfilePic();
+    this.baselayoutService.topbarType.subscribe((data) => {
+      console.log("hi",data);
+      this.topbarMetadata = data;
 
-    // })
+    })
   }
 
 
