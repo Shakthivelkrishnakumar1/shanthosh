@@ -24,6 +24,7 @@ export class BaseLayoutService {
   public userRoleListForAdmin: any = [];
   public sidenavExpanded: boolean = false;
   public topbarType = new BehaviorSubject<any>({ type: "type1", metadata: {} });
+  public footerType = new BehaviorSubject<any>({ type: "type1", metadata: {} });
   public userURI = '';
   public retailerCode = '';
   public adminRoles = [];

@@ -6,12 +6,13 @@ import { AuthenticationResult, BrowserAuthError } from '@azure/msal-browser';
 import { BaseLayoutService } from '../../base-layout/base-layout.service';
 import { Abbreviations } from '../../../blueprints/base-layout/base-layout.blueprint';
 import { HeaderComponent } from "../../base-layout/header/header.component";
+import { FooterComponent } from "../../base-layout/footer/footer.component";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule, HeaderComponent]
+  imports: [FormsModule, CommonModule, HeaderComponent,FooterComponent]
 })
 export class LoginComponent {
   @Output() onLoginSuccess = new EventEmitter<void>();

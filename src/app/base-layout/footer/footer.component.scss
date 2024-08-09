@@ -1,0 +1,159 @@
+
+.transparent,a{
+    background-color: transparent
+    a{
+      color: black;
+      }
+}
+
+.dark{
+    background-color: black;
+    a{
+    color: white;
+    }
+}
+
+.white{
+    background-color: white;
+    a{
+    color: black;
+    }
+}
+
+.type0{
+    position : absolute;
+    bottom : 0;
+    width: 100%;
+    height : 40px;
+    margin-top : 40px;
+    display: flex;    /* Enable Flexbox */
+    align-items: center;
+    
+}
+.center{
+    justify-content: center;
+}
+
+.right{
+  justify-content: right;
+}
+
+.left{
+  justify-content: left;
+}
+
+.menu{
+  padding-left: 20px;
+}
+.menu:hover{
+  cursor: pointer;
+}
+
+//Type2
+
+
+$dk-blue: #1E83AE;
+$blue: #3D5B94;
+$light-blue: #3DACDD;
+$green: #6dcd9a;
+$social-size: 1.2em;
+$social-width: 20%;
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html, body {
+  font-family: Raleway, sans-serif;  
+  background-color: #fff;
+}
+
+footer {
+  width: 100%;
+  display: inline-block;
+  position : absolute;
+  bottom : 0;
+  height: 65px;
+  
+  .copyright {
+    width: 50%;
+    float: left;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    p {
+      padding-left: 10%;
+     
+      font-size: 0.7em;
+      line-height: 70px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      @media (max-width: 600px) {
+        text-align: center;
+        padding: 0;
+      }
+    }
+  }
+  .social {
+      width: 50%;
+      float: right;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+     a {
+      float: left;
+      line-height: 65px;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-weight: bold; 
+       &:hover {
+         background-color: #222;
+         
+       }
+    }
+  }
+}
+
+.linked {
+  background-color: $dk-blue;
+  font-size: $social-size;
+  width: $social-width;
+}
+
+.face {
+  background-color: $blue;
+  font-size: $social-size;
+  width: $social-width;
+}
+
+.tweet {
+  background-color: $light-blue;
+  font-size: $social-size;
+  width: $social-width;
+}
+
+.support {
+  background-color: $green;
+  font-size: 0.8em;
+  width: 40%;
+}
+
+
+//type2
+
+.simple{
+  background-color: whitesmoke;
+  position : absolute;
+  bottom : 0;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    color:black
+}
+
+a {
+  text-decoration: none; /* Optional: Remove underline from links */
+}
