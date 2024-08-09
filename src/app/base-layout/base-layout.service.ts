@@ -45,11 +45,13 @@ setPageLevelMetadata = (value: any) => {
    
     const pageLayout = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthThree("appLayoutInfo", "gridAreaTemplate", value);
     this.constructorGridAreaTemplateFromMetaData(pageLayout);
-
+    
 
     const topbarType: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "topBarType", value);
     console.log("HII",topbarType)
-  
+    const footer: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "footer", value);
+    
+    this.footerType.next(footer)
    this.topbarType.next(topbarType)
 
   }
