@@ -61,7 +61,7 @@ setPageLevelMetadata = (value: any) => {
 
     let metadata = data.layout;
     this.documentStyleVariablesIntialiser();
-    const elementsToCheck = ["sidebar", "topbar", "contentbody"];
+    const elementsToCheck = ["sidebar", "topbar", "contentbody","footer"];
     let cssGridTemplate = '';
     for (let row = 0; row < metadata.length; row++) {
       cssGridTemplate += "'";
@@ -80,10 +80,10 @@ setPageLevelMetadata = (value: any) => {
     const missingElements = elementsToCheck.filter(element => {
       return !metadata.flat().includes(element);
     });
-
-    document.documentElement.style.setProperty('--helix-baselayout-template', cssGridTemplate);
-    document.documentElement.style.setProperty('--helix-baselayout-rows', data.styleMetaData.gridTemplateRows);
-    document.documentElement.style.setProperty('--helix-baselayout-columns', (this.sidenavExpanded && !(missingElements.includes("sidebar"))) ? "24.9375rem calc(100% - 24.9375rem)" : (data.styleMetaData.gridTemplateColumns));
+console.log("sjdnsjdnsjds",data.styleMetaData.gridTemplateRows);
+    document.documentElement.style.setProperty('--mainLayout-template', cssGridTemplate);
+    document.documentElement.style.setProperty('--mainLayout-rows', data.styleMetaData.gridTemplateRows);
+    document.documentElement.style.setProperty('--mainLayout-columns', (this.sidenavExpanded && !(missingElements.includes("sidebar"))) ? "24.9375rem calc(100% - 24.9375rem)" : (data.styleMetaData.gridTemplateColumns));
 
     missingElements.forEach((data) => {
       if (data == "sidebar") {
@@ -93,6 +93,10 @@ setPageLevelMetadata = (value: any) => {
       else if (data == "topbar") {
 
         document.documentElement.style.setProperty('--topbar-display', 'none');
+      }
+      else if (data == "footer") {
+
+        document.documentElement.style.setProperty('--footer-display', 'none');
       }
       else if (data == "contentbody") {
 
@@ -104,12 +108,14 @@ setPageLevelMetadata = (value: any) => {
 
   }
   documentStyleVariablesIntialiser = () => {
-    document.documentElement.style.setProperty('--helix-baselayout-template', '');
-    document.documentElement.style.setProperty('--helix-sidebar-display', 'block');
     document.documentElement.style.setProperty('--topbar-display', 'block');
+    document.documentElement.style.setProperty('--footer-display', 'block');
+    document.documentElement.style.setProperty('--mainLayout-template', '');
+    document.documentElement.style.setProperty('--mainLayout-rows', '100%');
+    document.documentElement.style.setProperty('--mainLayout-columns', '100%');
+    document.documentElement.style.setProperty('--helix-sidebar-display', 'block');
     document.documentElement.style.setProperty('--helix-contentbody-display', 'block');
-    document.documentElement.style.setProperty('--helix-baselayout-rows', '100%');
-    document.documentElement.style.setProperty('--helix-baselayout-columns', '100%');
+  
 
   }
 

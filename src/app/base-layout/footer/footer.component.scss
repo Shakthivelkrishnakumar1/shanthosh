@@ -23,7 +23,8 @@
 .type0{
     position : absolute;
     bottom : 0;
-    width: 100%;
+    right:0;
+    left:0;
     height : 40px;
     margin-top : 40px;
     display: flex;    /* Enable Flexbox */
@@ -71,11 +72,14 @@ html, body {
 }
 
 footer {
-  width: 100%;
+  right:0;
+    left:0;
   display: inline-block;
   position : absolute;
   bottom : 0;
   height: 65px;
+  overflow-x: hidden;
+  overflow-y: hidden;
   
   .copyright {
     width: 50%;
@@ -87,7 +91,7 @@ footer {
       padding-left: 10%;
      
       font-size: 0.7em;
-      line-height: 70px;
+      line-height: 65px;
       text-transform: capitalize;
       letter-spacing: 1px;
       @media (max-width: 600px) {

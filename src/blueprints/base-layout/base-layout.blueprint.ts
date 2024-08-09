@@ -30,20 +30,20 @@ export class BaseLayoutBlueprint {
                 },
                 LGN:{
                     layout : [
-                    ["topbar"]
-                    
-                    // ["contentbody"]
+                        
+                    ["topbar"],
+                    ["footer"]
                     ],
                     styleMetaData: {
                         gridTemplateColumns: "100%",
-                        gridTempLateRows:"3.5625rem"
+                        gridTemplateRows:"3.5625rem calc(100% - 3.5625rem)"
                     }
                 },
             },
             baseLayoutElements: {
                 topBarType: {
                     LGN: {
-                        type: "type0",
+                        type: "type1",
                         textCssClass: "",
                         textMessage:"Hello!!",
                         textContent : "Project/App Title",
@@ -57,11 +57,7 @@ export class BaseLayoutBlueprint {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
-<<<<<<< HEAD
-                        companyLogoPath: '../../../assets/logo/logo-2.png',
-=======
                         companyLogoPath: '../../../assets/logo/company.png',
->>>>>>> aaf508676e5a57ffa1737816cf39b12449a3c684
                       
                         logo1: '../../../assets/logo/logo-2.png',
                         logo2: '../../../assets/logo/logo-2.png'
@@ -70,8 +66,8 @@ export class BaseLayoutBlueprint {
                 footer: {
                     LGN: {
                         type: "type1",
-                        mode:"white",//dark,white,transparent
-                        position:"center",//left,right,center
+                        mode:"dark",//dark,white,transparent
+                        position:"right",//left,right,center
                         contact:"",
                         linked:"",
                         face:"",
