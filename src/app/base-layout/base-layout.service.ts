@@ -40,13 +40,74 @@ export class BaseLayoutService {
   ) { }
   
   
-  setPageLevelMetadata = (value: any) => {
+setPageLevelMetadata = (value: any) => {
    
-console.log("hfjdh")
+    const pageLayout = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthThree("appLayoutInfo", "gridAreaTemplate", value);
+    this.constructorGridAreaTemplateFromMetaData(pageLayout);
+
+
     const topbarType: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "topBarType", value);
     console.log("HII",topbarType)
   
    this.topbarType.next(topbarType)
 
   }
+
+
+  constructorGridAreaTemplateFromMetaData = (data: any) => {
+
+    let metadata = data.layout;
+    this.documentStyleVariablesIntialiser();
+    const elementsToCheck = ["sidebar", "topbar", "contentbody"];
+    let cssGridTemplate = '';
+    for (let row = 0; row < metadata.length; row++) {
+      cssGridTemplate += "'";
+      for (let col = 0; col < metadata[row].length; col++) {
+        const element = metadata[row][col];
+        if (element) {
+          cssGridTemplate += `${element} `;
+        }
+      }
+      cssGridTemplate = cssGridTemplate.trim();
+      if (cssGridTemplate) {
+        cssGridTemplate += "'\n";
+      }
+    }
+
+    const missingElements = elementsToCheck.filter(element => {
+      return !metadata.flat().includes(element);
+    });
+
+    document.documentElement.style.setProperty('--helix-baselayout-template', cssGridTemplate);
+    document.documentElement.style.setProperty('--helix-baselayout-rows', data.styleMetaData.gridTemplateRows);
+    document.documentElement.style.setProperty('--helix-baselayout-columns', (this.sidenavExpanded && !(missingElements.includes("sidebar"))) ? "24.9375rem calc(100% - 24.9375rem)" : (data.styleMetaData.gridTemplateColumns));
+
+    missingElements.forEach((data) => {
+      if (data == "sidebar") {
+
+        document.documentElement.style.setProperty('--helix-sidebar-display', 'none');
+      }
+      else if (data == "topbar") {
+
+        document.documentElement.style.setProperty('--topbar-display', 'none');
+      }
+      else if (data == "contentbody") {
+
+        document.documentElement.style.setProperty('--helix-contentbody-display', 'none');
+      }
+    })
+
+
+
+  }
+  documentStyleVariablesIntialiser = () => {
+    document.documentElement.style.setProperty('--helix-baselayout-template', '');
+    document.documentElement.style.setProperty('--helix-sidebar-display', 'block');
+    document.documentElement.style.setProperty('--topbar-display', 'block');
+    document.documentElement.style.setProperty('--helix-contentbody-display', 'block');
+    document.documentElement.style.setProperty('--helix-baselayout-rows', '100%');
+    document.documentElement.style.setProperty('--helix-baselayout-columns', '100%');
+
+  }
+
 }

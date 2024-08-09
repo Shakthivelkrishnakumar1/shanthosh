@@ -35,15 +35,14 @@ export class BaseLayoutBlueprint {
                     ],
                     styleMetaData: {
                         gridTemplateColumns: "100%",
-                        // gridTemplateRows: "3.5625rem calc(100% - 3.5625rem)"
-                        gridTempLateRows:"100%"
+                        gridTempLateRows:"3.5625rem"
                     }
                 },
             },
             baseLayoutElements: {
                 topBarType: {
                     LGN: {
-                        type: "type3",
+                        type: "type0",
                         textCssClass: "",
                         textMessage:"Hello!!",
                         textContent : "Project/App Title",
@@ -85,3 +84,4 @@ export class BaseLayoutBlueprint {
 }
 
 
+// INC12686394

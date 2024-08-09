@@ -1,7 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.topbar{
-    grid-area: topbar;
-    display: var(--helix-topbar-display);
-}
+
+:root {
+    --topbar-display: block;
+  }
+  
+  .topbar {
+    display: var(--topbar-display);
+    grid-area:topbar;
+  }
+
+  
+.fullWidth-fullHeight {
+    width: 100%;
+    height: 100%;
+  }
