@@ -44,20 +44,25 @@ export class BaseLayoutBlueprint {
             baseLayoutElements: {
                 topBarType: {
                     LGN: {
-                        type: "type2",
+                        type: "type3",
                         textCssClass: "",
-                        textContent : "",
+                        textMessage:"Hello!!",
+                        textContent : "Project/App Title",
                         
-                        companyLogoPath: '../../../assets/logo/company-logo.png',
+                        companyLogoPath: '../../../assets/logo/company.png',
                        
-                        logo1: '../../../assets/logo/logo-2.png',
+                        logo1: '../../../assets/logo/bsc.png',
                         logo2: '../../../assets/logo/logo-2.png'
                     },
                     BL: {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
+<<<<<<< HEAD
                         companyLogoPath: '../../../assets/logo/logo-2.png',
+=======
+                        companyLogoPath: '../../../assets/logo/company.png',
+>>>>>>> aaf508676e5a57ffa1737816cf39b12449a3c684
                       
                         logo1: '../../../assets/logo/logo-2.png',
                         logo2: '../../../assets/logo/logo-2.png'
