@@ -1,7 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root{
+    --footer-display:block;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 .topbar{
     grid-area: topbar;
     display: var(--helix-topbar-display);
+}
+
+.footer{
+    grid-area: footer;
+    display: var(--footer-display);
 }

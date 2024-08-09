@@ -31,6 +31,7 @@ export class BaseLayoutBlueprint {
                 LGN:{
                     layout : [
                     ["topbar"]
+                    
                     // ["contentbody"]
                     ],
                     styleMetaData: {
@@ -56,10 +57,28 @@ export class BaseLayoutBlueprint {
                         type: "type2",
                         textCssClass: "",
                         textContent : "",
-                        companyLogoPath: '../../../assets/logo/company-logo.png',
+                        companyLogoPath: '../../../assets/logo/logo-2.png',
                       
                         logo1: '../../../assets/logo/logo-2.png',
                         logo2: '../../../assets/logo/logo-2.png'
+                    },
+                },
+                footer: {
+                    LGN: {
+                        type: "type1",
+                        mode:"white",//dark,white,transparent
+                        position:"center",//left,right,center
+                        contact:"",
+                        linked:"",
+                        face:"",
+                        tweet:"",
+                        link1:"",
+                        link2:"",
+                        menu:true
+                    },
+                    BL: {
+                        type: "type2",
+                        background:"black"
                     },
                 }
             }

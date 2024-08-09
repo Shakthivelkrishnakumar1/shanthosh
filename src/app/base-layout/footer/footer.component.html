@@ -1,0 +1,26 @@
+  <div [ngClass]="className" *ngIf="footerData.type=='type0'" >
+  <a class="text-dark" [href]="footerData.link1">©Copyright</a>
+      <a class="text-dark" [href]="footerData.link2" style="padding-left: 20px;">MDBootstrap.com</a>
+      <div class="menu" *ngIf="footerData.menu"><img src="../../../assets/option.png" style="height: 25px;width: 25px;"></div>
+    </div> 
+
+    <footer [ngClass]="className" *ngIf="footerData.type=='type1'">
+        <div class="copyright">
+          <p>&copy 2013 - Organisation</p>
+        </div>
+        <div class="social">
+          <a [href]="footerData.contact" class="support">Contact Us</a>
+          <a [href]="footerData.facebook" class="face">f</a>
+          <a [href]="footerData.tweet" class="tweet">t</a>
+          <a [href]="footerData.linked" class="linked">in</a>
+        </div>
+      </footer>
+
+      <!-- <div class="simple" *ngIf="footerData.type=='type0'">
+
+        <a [href]="footerData.terms" >Terms of use</a>
+        <a [href]="footerData.terms" style="padding-left: 30px;">Privacy & cookies</a>
+        <i style="padding-left: 30px;"><img src="../../../assets/option.png" style="height: 30px;width: 30px;"></i>
+        
+
+      </div> -->

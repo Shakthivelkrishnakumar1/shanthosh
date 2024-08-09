@@ -24,6 +24,7 @@ export class BaseLayoutService {
   public userRoleListForAdmin: any = [];
   public sidenavExpanded: boolean = false;
   public topbarType = new BehaviorSubject<any>({ type: "type1", metadata: {} });
+  public footerType = new BehaviorSubject<any>({ type: "type1", metadata: {} });
   public userURI = '';
   public retailerCode = '';
   public adminRoles = [];
@@ -42,11 +43,13 @@ export class BaseLayoutService {
   
   setPageLevelMetadata = (value: any) => {
    
-console.log("hfjdh")
-    const topbarType: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "topBarType", value);
-    console.log("HII",topbarType)
-  
-   this.topbarType.next(topbarType)
+      console.log("hfjdh")
+      const topbarType: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "topBarType", value);
+      console.log("HII",topbarType)
+      const footer: any = BaseLayoutBlueprint.getBaseLayoutBlueprintDataDepthFour("appLayoutInfo", "baseLayoutElements", "footer", value);
+    
+    this.footerType.next(footer)
+    this.topbarType.next(topbarType)
 
   }
 }
