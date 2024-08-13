@@ -1,0 +1,66 @@
+
+<div class="header-withoutbg px-4 py-1" *ngIf="topbarMetadata.type=='type0'">
+    <div>
+        <img [src]="topbarMetadata.companyLogoPath" class="company-logo" alt="">
+    </div>
+    <div>
+        <img [src]="topbarMetadata.logo1" class="client-logo" alt="">
+    </div>
+</div>
+
+<div class="header-withbg px-4 py-1" *ngIf="topbarMetadata.type=='type1'">
+    <div>
+        <img [src]="topbarMetadata.companyLogoPath" class="company-logo" alt="">
+    </div>
+    <div>
+        <img [src]="topbarMetadata.logo1" class="client-logo" alt="">
+    </div>
+    <div class="right-logo">
+        <img [src]="topbarMetadata.logo2" class="client-logo" alt="">
+    </div>
+</div>
+
+<div class="header-withbg px-4 py-1" *ngIf="topbarMetadata.type=='type2'">
+    <div>
+        <img [src]="topbarMetadata.companyLogoPath" class="company-logo" alt="">
+    </div>
+    <div>
+        <img [src]="topbarMetadata.logo1" class="client-logo" alt="">
+    </div>
+    <div class="center-text">
+        <h1 class="font dynamic-text">{{topbarMetadata.textContent}}</h1>
+       
+    </div>
+    <div class="right-logo">
+        <img [src]="topbarMetadata.logo2" class="client-logo" alt="">
+    </div>
+</div>
+
+<div class="header-withbg px-4 py-1" *ngIf="topbarMetadata.type=='type3'">
+    <div>
+        <img [src]="topbarMetadata.companyLogoPath" class="company-logo" alt="">
+    </div>
+    <div>
+        <img [src]="topbarMetadata.logo1" class="client-logo" alt="">
+    </div>
+    <div>
+        <p class="font-blue pl-2 font-black font-semibold">{{regionName}}</p>
+    </div>
+    <div class="center-text">
+        <div class="center-content">
+            <img [src]="topbarMetadata.logo2" class="client-logo-stacked" alt="">
+        </div>
+        <h1 class="font-blue collaboration-suite-text">{{topbarMetadata.textMessage}}
+        </h1> 
+    </div>
+    <!-- <div class="hover-div" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+        <div class="flex flex-row gap-3 items-center cursor-pointer relative .right-profile">
+            <img [src]="profilePhoto" class="user-profilephoto" alt="">
+            <p class="font-black font-semibold pr-4">{{helloText}} {{profileDetails?.givenName}} !</p>
+             <div class="menu absolute top-16 left-0 w-full" *ngIf="profileDrowdownToggle">
+                <app-profile-dropdown [profileDetails]="profileDetails"></app-profile-dropdown>
+            </div>
+        </div>
+    </div>  -->
+
+</div> 

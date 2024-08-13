@@ -1,0 +1,84 @@
+.header-withoutbg {
+    display: flex;
+    align-items: center;
+}
+
+.header-withbg {
+    background: linear-gradient(0deg, rgb(190, 230, 190) 50%, rgba(230, 240, 255, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--framework-layout-border-style);
+}
+
+.company-logo {
+    width: clamp(5.638rem, 3vw, 2.75rem);
+}
+
+.client-logo {
+    width: clamp(5.638rem, 3vw, 2.75rem);
+    margin-left: 15px;
+    height: 38px;
+}
+
+.header-text {
+    color: var(--TopBarFrameWorkHeaderColor);
+}
+
+.right-logo {
+    margin-left: auto;
+}
+
+.center-text {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.client-logo-stacked {
+    width: clamp(8rem, 3vw, 2.6rem);
+}
+
+.collaboration-suite-text {
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    font-weight: 900;
+    margin-left: auto;
+}
+
+.dynamic-text {
+    font-size: clamp(1.1rem, 0.8vw, 1.45rem);
+    font-weight: 900;
+    text-align: center;
+}
+
+.user-profilephoto {
+    width: 2.6rem;
+    border-radius: 50%;
+}
+
+.hover-div {
+    position: relative;
+    display: inline-block;
+}
+
+.menu {
+    padding-top: 0.625rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.hover-div:hover .menu {
+    display: block;
+}
