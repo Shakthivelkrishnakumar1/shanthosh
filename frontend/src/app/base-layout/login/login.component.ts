@@ -8,23 +8,28 @@ import { HeaderComponent } from "../../base-layout/header/header.component";
 import { LoginBlueprint } from '../../../blueprints/login/login.blueprint';
 import { Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { Subscription } from 'rxjs';
+import { GoogleSigninComponent } from './google-signin/google-signin.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, HeaderComponent, HomeComponent]
+  imports: [FormsModule, CommonModule, HeaderComponent, HomeComponent,GoogleSigninComponent]
 })
 export class LoginComponent implements OnInit {
   loginBlueprint: any;
   usePopup: boolean; 
+  authSubscription!: Subscription;
 
   constructor(
     private msalService: MsalService,
     private msalBroadcastService: MsalBroadcastService,
     private baseLayoutService: BaseLayoutService,
-    private router: Router
+    private router: Router,
+    private authService: SocialAuthService
   ) {
     this.loginBlueprint = LoginBlueprint.getLoginBlueprintData();
     this.usePopup = this.loginBlueprint.metadata.authMethod === 'popup';
@@ -42,6 +47,14 @@ export class LoginComponent implements OnInit {
         }
       }
     });
+
+    this.authSubscription = this.authService.authState.subscribe((user) => {
+      console.log('user', user);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
   }
 
   login(): void {
@@ -74,4 +87,9 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+  googleSignin(googleWrapper: any) {
+    googleWrapper.click();
+  }
+
 }

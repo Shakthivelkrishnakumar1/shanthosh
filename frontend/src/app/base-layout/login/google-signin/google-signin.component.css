@@ -1,0 +1,7 @@
+.option-button{
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+.option-button:hover{
+    transform: translateY(-5px);
+}

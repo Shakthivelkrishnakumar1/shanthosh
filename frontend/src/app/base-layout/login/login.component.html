@@ -9,11 +9,20 @@
                 <div>
                     <h2 [class]="loginBlueprint.element.WLCM_TXT.className">{{loginBlueprint.element.WLCM_TXT.content}}</h2>
                 </div>
-                <div>
-                    <button [class]="loginBlueprint.element.LGN_BTN.className + ' font'" (click)="login()">
+                <form>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button [class]="loginBlueprint.element.LGN_BTN.className + ' font'" >
                         {{loginBlueprint.element.LGN_BTN.content}}
                     </button>
-                </div>
+
+                </form>
+                <h3>or</h3>
+                <div class="flex">
+                <button class="option-button" (click)="login()" ><img src="msicon.png" style="height: 45px;width: 45px;"></button>
+                <button class="option-button"><img src="aws.png" style="height: 45px;width: 45px;"></button>
+                <app-google-signin (loginWithGoogle)="googleSignin($event)"></app-google-signin>
+            </div>
             </div>
         </div>
     </div>

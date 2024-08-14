@@ -6,6 +6,11 @@ import { PublicClientApplication, InteractionType } from '@azure/msal-browser';
 import { MsalService, MsalGuard, MsalInterceptor, MSAL_INSTANCE, MSAL_GUARD_CONFIG, MSAL_INTERCEPTOR_CONFIG, MsalBroadcastService } from '@azure/msal-angular';
 import { routes } from './app/app.routes';
 import { LoginBlueprint } from './blueprints/login/login.blueprint';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+  GoogleLoginProvider,
+} from "@abacritt/angularx-social-login";
 
 function MSALInstanceFactory() {
   return new PublicClientApplication({
@@ -47,6 +52,23 @@ bootstrapApplication(AppComponent, {
     { provide: MSAL_INTERCEPTOR_CONFIG, useFactory: MSALInterceptorConfigFactory },
     MsalService,
     MsalGuard,
+    SocialLoginModule,{
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('772900034161-arv763khkvh0tgcg2ev4lk5jl897vr01.apps.googleusercontent.com', {
+              scopes: 'shajithgunasekaran@gmail.com',
+            }),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
+        },
+      } as SocialAuthServiceConfig,
+    },
     MsalBroadcastService,
     {
       provide: HTTP_INTERCEPTORS,

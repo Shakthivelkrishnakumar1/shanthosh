@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 .login-btn {
     background-color: #007bff;
     color: #ffffff;
@@ -49,4 +50,36 @@
     to {
         opacity: 1;
     }
+}
+
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+    transition: transform 0.2s ease;
+}
+
+input:active{
+    transform: translateY(2px);
+}
+
+.option-button{
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+.option-button:hover{
+    transform: translateY(-5px);
 }
